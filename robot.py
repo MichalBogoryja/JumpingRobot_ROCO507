@@ -175,3 +175,55 @@ if __name__ == '__main__':
             speed_br_publisher.publish(motor_br_speed)
             speed_bl_publisher.publish(motor_bl_speed)
             time.sleep(button_delay)
+
+        if char == "t":     #increase current speed by 7% of its maximum value
+            print("Speed up")
+            if 0.0 < motor_fr_speed < 7.0:
+                motor_fr_speed += 0.5
+            if 0.0 < motor_fl_speed < 7.0:
+                motor_fl_speed += 0.5
+            if 0.0 < motor_br_speed < 7.0:
+                motor_br_speed += 0.5
+            if 0.0 < motor_bl_speed < 7.0:
+                motor_bl_speed += 0.5
+
+            if -7.0 < motor_fr_speed < 0.0:
+                motor_fr_speed -= 0.5
+            if -7.0 < motor_fl_speed < 0.0:
+                motor_fl_speed -= 0.5
+            if -7.0 < motor_br_speed < 0.0:
+                motor_br_speed -= 0.5
+            if -7.0 < motor_bl_speed < 0.0:
+                motor_bl_speed -= 0.5
+
+            speed_fr_publisher.publish(motor_fr_speed)
+            speed_fl_publisher.publish(motor_fl_speed)
+            speed_br_publisher.publish(motor_br_speed)
+            speed_bl_publisher.publish(motor_bl_speed)
+            time.sleep(button_delay)
+
+        if char == "g":  # decrease current speed by 7% of its maximum value
+            print("Speed down")
+            if 0.0 < motor_fr_speed < 7.0:
+                motor_fr_speed -= 0.5
+            if 0.0 < motor_fl_speed < 7.0:
+                motor_fl_speed -= 0.5
+            if 0.0 < motor_br_speed < 7.0:
+                motor_br_speed -= 0.5
+            if 0.0 < motor_bl_speed < 7.0:
+                motor_bl_speed -= 0.5
+
+            if -7.0 < motor_fr_speed < 0.0:
+                motor_fr_speed += 0.5
+            if -7.0 < motor_fl_speed < 0.0:
+                motor_fl_speed += 0.5
+            if -7.0 < motor_br_speed < 0.0:
+                motor_br_speed += 0.5
+            if -7.0 < motor_bl_speed < 0.0:
+                motor_bl_speed += 0.5
+
+            speed_fr_publisher.publish(motor_fr_speed)
+            speed_fl_publisher.publish(motor_fl_speed)
+            speed_br_publisher.publish(motor_br_speed)
+            speed_bl_publisher.publish(motor_bl_speed)
+            time.sleep(button_delay)
