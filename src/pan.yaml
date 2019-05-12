@@ -1,0 +1,53 @@
+wheel_front_right_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_torque_controller
+        type: JointTorqueController
+    joint_name: left_joint
+    joint_speed: 1.17
+    motor:
+        id: 1
+        init: 0
+        min: 0
+        max: 4095
+
+wheel_front_left_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_torque_controller
+        type: JointTorqueController
+    joint_name: right_joint
+    joint_speed: 1.17
+    motor:
+        id: 2
+        init: 0
+        min: 0
+        max: 4095
+
+wheel_back_right_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_torque_controller
+        type: JointTorqueController
+    joint_name: left_joint
+    joint_speed: 1.17
+    motor:
+        id: 3
+        init: 0
+        min: 0
+        max: 4095
+
+wheel_back_left_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_torque_controller
+        type: JointTorqueController
+    joint_name: right_joint
+    joint_speed: 1.17
+    motor:
+        id: 4
+        init: 0
+        min: 0
+        max: 4095
+
+
