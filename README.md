@@ -1,4 +1,4 @@
-# JumpingRobot_ROCO507# Jumping robot
+# JumpingRobot_ROCO507
 
 [TOC]
 
@@ -50,7 +50,13 @@ Raspberry Pi:
 
 1. Follow steps 1 and 2 from the laptop's instruction <instead of calling package "my_dynamixel" call it "my_dynamixel_tutorial">
 
-2. Upload files to my_dynamixel_tutorial package:
+2. Install Dynamixel Controllers driver
+
+   ```bash
+   $ sudo apt-get install ros-<distro>-dynamixel-controllers
+   ```
+
+3. Upload files to my_dynamixel_tutorial package:
 
    1. upload content of the "launch" folder to: ~/catkin_ws/src/my_dynamixel_tutorial/launch/
 
@@ -123,8 +129,12 @@ Keyboard commands (to be pressed in the robot.py node window):
 - X - rotate at a full speed anti-clockwise
 - V - rotate at a full speed clockwise
 - T - increase current speed by 7% of its maximum value
-- G - reduce current speed by 6% of its maximum value
-- 
+- G - reduce current speed by 7% of its maximum value
+- O - setting the robot's leg to 0 position
+- K - setting the robot's legs to the starting position
+- J - changing the robot's legs position by -0.05 (rad)
+- L - changing the robot's legs position by +0.05 (rad)
+- M - setting the robot's legs to the jumping position
 
 ## Authors
 
