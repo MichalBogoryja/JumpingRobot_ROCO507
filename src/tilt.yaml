@@ -49,5 +49,31 @@ leg_back_right_controller:
         init: 0
         min: 0
         max: 4095
+        
+front_legs_folding_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: tilt_joint
+    joint_speed: 2
+    motor:
+        id: 8
+        init: 0
+        min: 0
+        max: 4095
+        
+back_legs_folding_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: tilt_joint
+    joint_speed: 2
+    motor:
+        id: 9
+        init: 0
+        min: 0
+        max: 4095
 
 
