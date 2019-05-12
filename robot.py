@@ -10,6 +10,12 @@ motor_fl_speed = 0.0
 motor_br_speed = 0.0
 motor_bl_speed = 0.0
 
+position = 0.0
+position_bl = 0.0
+position_fr = 0.0
+position_fl = 0.0
+position_br = 0.0
+
 button_delay = 0.2
 
 
@@ -36,6 +42,11 @@ if __name__ == '__main__':
     speed_fl_publisher = rospy.Publisher('wheel_front_left_controller/command', Float64, queue_size=10)
     speed_br_publisher = rospy.Publisher('wheel_back_right_controller/command', Float64, queue_size=10)
     speed_bl_publisher = rospy.Publisher('wheel_back_left_controller/command', Float64, queue_size=10)
+
+    position_bl_publisher = rospy.Publisher('leg_back_left_controller/command', Float64, queue_size=10)
+    position_fr_publisher = rospy.Publisher('leg_front_right_controller/command', Float64, queue_size=10)
+    position_fl_publisher = rospy.Publisher('leg_front_left_controller/command', Float64, queue_size=10)
+    position_br_publisher = rospy.Publisher('leg_back_right_controller/command', Float64, queue_size=10)
 
     while not rospy.is_shutdown():
         char = getch()
@@ -226,4 +237,74 @@ if __name__ == '__main__':
             speed_fl_publisher.publish(motor_fl_speed)
             speed_br_publisher.publish(motor_br_speed)
             speed_bl_publisher.publish(motor_bl_speed)
+            time.sleep(button_delay)
+
+        if char == "o":  # setting the robot's legs to 0 position
+            print("Position 0")
+            position_bl = 0.0
+            position_fr = 0.0
+            position_fl = 0.0
+            position_br = 0.0
+            position = 0.0
+            print(position)
+            position_bl_publisher.publish(position_bl)
+            position_fr_publisher.publish(position_fr)
+            position_fl_publisher.publish(position_fl)
+            position_br_publisher.publish(position_br)
+            time.sleep(button_delay)
+
+        if char == "k":  # setting the robot's legs to the starting position
+            print("Starting position ~0")
+            position_bl = 0.0
+            position_fr = 0.0
+            position_fl = 0.1
+            position_br = 0.0
+            position = 0.0
+            print(position)
+            position_bl_publisher.publish(position_bl)
+            position_fr_publisher.publish(position_fr)
+            position_fl_publisher.publish(position_fl)
+            position_br_publisher.publish(position_br)
+            time.sleep(button_delay)
+
+        if char == "l":  # changing the robot's legs position by 0.05
+            print("Position +0.05")
+            position_bl += 0.05
+            position_fr += 0.05
+            position_fl += 0.05
+            position_br += 0.05
+            position += 0.05
+            print(position)
+            position_bl_publisher.publish(position_bl)
+            position_fr_publisher.publish(position_fr)
+            position_fl_publisher.publish(position_fl)
+            position_br_publisher.publish(position_br)
+            time.sleep(button_delay)
+
+        if char == "j":  # changing the robot's legs position by -0.05
+            print("Position -0.05")
+            position_bl -= 0.05
+            position_fr -= 0.05
+            position_fl -= 0.05
+            position_br -= 0.05
+            position -= 0.05
+            print(position)
+            position_bl_publisher.publish(position_bl)
+            position_fr_publisher.publish(position_fr)
+            position_fl_publisher.publish(position_fl)
+            position_br_publisher.publish(position_br)
+            time.sleep(button_delay)
+
+        if char == "m":  # setting the robot's legs to the jumping position
+            print("Jump")
+            position_bl = 5.2
+            position_fr = 5.2
+            position_fl = 5.2
+            position_br = 5.2
+            position = 5.2
+            print(position)
+            position_bl_publisher.publish(position_bl)
+            position_fr_publisher.publish(position_fr)
+            position_fl_publisher.publish(position_fl)
+            position_br_publisher.publish(position_br)
             time.sleep(button_delay)
