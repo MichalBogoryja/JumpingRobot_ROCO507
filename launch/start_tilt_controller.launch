@@ -8,7 +8,9 @@
                 leg_front_right_controller
                 leg_front_left_controller
                 leg_back_right_controller
-				front_legs_folding_controller
-				back_legs_folding_controller"
+				front_left_legs_folding_controller
+				back_left_legs_folding_controller
+				front_right_legs_folding_controller
+				back_right_legs_folding_controller"
           output="screen"/>
 </launch>
