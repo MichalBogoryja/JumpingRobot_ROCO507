@@ -19,8 +19,10 @@ The system is distributed across:
 The robot can:
 
 - jump,
-
+- fold its legs,
 - drive in multiple directions.
+
+The robot's behavior can be controlled by a human operating the "robot.py" node on the laptop.
 
 ## Installation
 
@@ -35,14 +37,42 @@ Laptop with Linux:
 
 3. Upload files to my_dynamixel package:
 
-   1. upload the file "robot.py" to: ~/catkin_ws/src/my_dynamixel/scripts
+   1. upload the file "robot.py" to: ~/catkin_ws/src/my_dynamixel/
 
-   2. ```bash
+4. Build packages in catkin workspace
+
+   1. Go to catkin workspace directory
+
+      ```bash
       $ cd ~/catkin_ws/
       ```
 
-   3. ```bash
+   2. Build packages
+
+      ```bash
       $ catkin_make
+      ```
+
+5. Configure .bashrc file 
+
+   1. Open .bashrc file
+
+      ```bash
+      $ gedit .bashrc
+      ```
+
+   2. Add at the bottom of the file following lines:
+
+      ```
+      export ROS_MASTER_URI=http://localhost:11311/
+      export ROS_HOSTNAME=<the laptop's IP>
+      export ROS_IP=<the laptop's IP>
+      ```
+
+   3. Source .bashrc file
+
+      ```bash
+      $ source .bashrc
       ```
 
 
@@ -59,16 +89,44 @@ Raspberry Pi:
 3. Upload files to my_dynamixel_tutorial package:
 
    1. upload content of the "launch" folder to: ~/catkin_ws/src/my_dynamixel_tutorial/launch/
-
    2. upload content of the "src" folder to: ~/catkin_ws/src/my_dynamixel_tutorial/
 
-   3. ```bash
+4. Build packages in catkin workspace
+
+   1. Go to catkin workspace directory
+
+      ```bash
       $ cd ~/catkin_ws/
       ```
 
-   4. ```bash
+   2. Build packages
+
+      ```bash
       $ catkin_make
       ```
+
+5. Configure .bashrc file 
+
+   1. Open .bashrc file
+
+      ```bash
+      $ gedit .bashrc
+      ```
+
+   2. Add at the bottom of the file following lines:
+
+      ```
+      export ROS_MASTER_URI=http://the laptop's IP:11311/
+      export ROS_HOSTNAME=<the Raspberry's IP>
+      export ROS_IP=<the Raspberry's IP>
+      ```
+
+   3. Source .bashrc file
+
+      ```bash
+      $ source .bashrc
+      ```
+
 
 ## Running the system
 
@@ -128,18 +186,46 @@ Keyboard commands (to be pressed in the robot.py node window):
 - C - full speed diagonal backward right
 - X - rotate at a full speed anti-clockwise
 - V - rotate at a full speed clockwise
-- T - increase current speed by 7% of its maximum value
-- G - reduce current speed by 7% of its maximum value
+- Y - increase current speed by 7% of its maximum value
+- H - reduce current speed by 7% of its maximum value
 - O - setting the robot's leg to 0 position
-- K - setting the robot's legs to the starting position
+- K - setting the robot's legs to the first starting position
+- N - setting the robot's legs to the second starting position
 - J - changing the robot's legs position by -0.05 (rad)
 - L - changing the robot's legs position by +0.05 (rad)
-- M - setting the robot's legs to the jumping position
+- M - jumping (from the first starting position)
+- O - jumping (from the second starting position)
+- 0 - rotating legs up
+- 1 - rotating legs down by 0.1 (rad)
+- 2 - rotating legs up by 0.1 (rad)
+- 3 - rotating legs down 
+- 5 - preparing legs to down-folding (when initial position is ~0)
+- 5 - preparing legs to down-folding (when initial position is ~5.2)
+
+## Links to videos
+
+Evaluation of the robot's driving behavior:
+
+1. Early stages - <https://youtu.be/BNNEmNGqUxc>
+2. Final stage - <https://youtu.be/ybAbjyJAmC4>
+
+Evaluation of the robot's jumping behavior:
+
+1. Just one leg - https://youtu.be/G1J8bCmxgGU
+3. Early stages with all four legs - https://youtu.be/6cJKMZFHYcE
+4. Four legs after some improvements - https://youtu.be/etr4STEtW9g
+5. Final stage - https://youtu.be/HQ1hYwN6pAw
+
+Legs folding - https://youtu.be/vKZoalooXHU
+
+The robot's behavior animation - https://youtu.be/MrXAhyIWOSs
+
+Final demonstration of all behaviors - https://youtu.be/TGW2EMyFp7g
 
 ## Authors
 
-Michal Bogoryja-Zakrzewski - 10634856
+Michal Bogoryja-Zakrzewski 
 
-Tengxiao He - 10609178
+Tengxiao He 
 
-Haiwei Xu - 10623214
+Haiwei Xu 
