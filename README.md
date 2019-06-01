@@ -216,6 +216,8 @@ Evaluation of the robot's jumping behavior:
 4. Four legs after some improvements - https://youtu.be/etr4STEtW9g
 5. Final stage - https://youtu.be/HQ1hYwN6pAw
 
+Height of a jump experiment - <https://youtu.be/KC6PH26aIuQ>
+
 Legs folding - https://youtu.be/vKZoalooXHU
 
 The robot's behavior animation - https://youtu.be/MrXAhyIWOSs
